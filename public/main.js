@@ -4,8 +4,11 @@ var mainState = {
   preload: function(){
     game.stage.backgroundColor = '#71c5cf';
 
-    game.load.image('bird', 'assets/bird.png');
-    game.load.image('pipe', 'assets/pipe.png');
+    game.load.spritesheet('bird', 'assets/humstar.png', 32, 32);
+    game.load.image('pipe', 'assets/colormap.png');
+    game.load.spritesheet('boom', '/assets/misc/explode1.png', 128, 128);
+    //game.load.image('bird', 'assets/bird.png');
+    //game.load.image('pipe', 'assets/pipe.png');
     game.load.audio('jump', 'assets/jump.wav');
   },
 
@@ -18,6 +21,9 @@ var mainState = {
     game.physics.arcade.enable(this.bird);
     this.bird.body.gravity.y = 1000;
     this.bird.anchor.setTo(-0.2, 0.5);
+    this.bird.scale.setTo(1.5);
+    this.bird.animations.add('hum');
+    this.bird.animations.play('hum', 20, true);
 
     this.pipes = game.add.group();
     this.pipes.enableBody = true;
