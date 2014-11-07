@@ -5,10 +5,9 @@ var mainState = {
     game.stage.backgroundColor = '#71c5cf';
 
     game.load.spritesheet('bird', 'assets/humstar.png', 32, 32);
-    game.load.image('pipe', 'assets/colormap.png');
     game.load.spritesheet('boom', '/assets/misc/explode1.png', 128, 128);
     //game.load.image('bird', 'assets/bird.png');
-    //game.load.image('pipe', 'assets/pipe.png');
+    game.load.image('pipe', 'assets/pipe.png');
     game.load.audio('jump', 'assets/jump.wav');
   },
 
